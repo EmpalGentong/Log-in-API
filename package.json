@@ -1,0 +1,16 @@
+{
+  "name": "log-in-api",
+  "version": "1.0.0",
+  "description": "login api using postgresql database",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js"
+  },
+  "author": "nabawi",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2"
+  }
+}
