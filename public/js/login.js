@@ -1,12 +1,12 @@
-const { application } = require("express");
-const { json } = require("sequelize");
+//const { application } = require("express");
+//const { json } = require("sequelize");
 
-format.addEventListener("submit", () => {
+form.addEventListener("submit", () => {
   const login = { email: email.value, password: password.value };
   fetch("/login", {
     method: "POST",
     body: json.stringify(login),
-    headers: { "content-type": "application/json" },
+    headers: { "content-type": "application / json" },
   })
     .then((res) => res.json())
     .then((data) => {

@@ -1,8 +1,10 @@
-const User = require("../sequelize/models/user");
+const { User } = require("../sequelize/models/");
 const bcrypt = require("bcryptjs");
 
 const register = async (req, res) => {
+  console.log(req.body);
   const { email, password: Npassword } = req.body;
+  console.log(email, Npassword);
   if (!email || !Npassword) {
     res.json({ status: "error", message: "please provide email and password" });
   } else {
@@ -18,7 +20,7 @@ const register = async (req, res) => {
           });
         } else {
           const pass = bcrypt.hash(Npassword, 8);
-          User.query(
+          await User.query(
             "Insert into users set ?",
             {
               email: email,

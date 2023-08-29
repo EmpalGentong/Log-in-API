@@ -6,6 +6,6 @@ routes.get("/", (req, res) => {
   res.sendFile("register.html", { root: "./public/" });
 });
 
-routes.post("/");
+routes.post("/", register);
 
 module.exports = routes;

@@ -5,8 +5,9 @@ const app = express();
 const dotenv = process.env;
 const { sequelize } = require("./sequelize/models");
 
-app.use("./js", express.static(__dirname + "public/js"));
-app.use("./css", express.static(__dirname + "public/css"));
+app.use("./js", express.static("./public/js/"));
+app.use("./css", express.static("./public/css"));
+app.use(express.static("public"));
 app.use(express.json());
 app.use(cookieParser());
 app.set("view engine", "ejs");
