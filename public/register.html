@@ -52,6 +52,8 @@
             class="form-control"
             id="exampleInputEmail1"
             aria-describedby="emailHelp"
+            autocomplete="off"
+            required
           />
           <div id="emailHelp" class="form-text">
             We'll never share your email with anyone else.
@@ -63,8 +65,24 @@
             type="password"
             class="form-control"
             id="exampleInputPassword1"
+            autocomplete="off"
+            required
           />
         </div>
+        <div
+          class="alert alert-primary"
+          role="alert"
+          id="success"
+          style="display: none"
+        ></div>
+
+        <div
+          class="alert alert-danger"
+          role="alert"
+          id="error"
+          style="display: none"
+        ></div>
+
         <button type="submit" class="btn btn-primary">Submit</button>
       </form>
     </div>

@@ -25,7 +25,7 @@ const connectDB = async () => {
 //HomePage Routes
 app.get("/", (req, res) => {
   try {
-    res.sendFile("./views/index.ejs");
+    res.render("index.ejs");
   } catch (err) {
     res.status(500).json({ message: err });
   }
