@@ -1,20 +1,26 @@
 const { user } = require("../models/");
 const bcrypt = require("bcrypt");
-const { where } = require("sequelize");
 
 const registerUser = async (req, res) => {
   const { name, email } = req.body;
   const salt = await bcrypt.genSalt(12);
   const password = await bcrypt.hash(req.body.password, salt);
   try {
+    if (await user.findOne({ where: { email: email } })) {
+      throw Error("User already registered");
+    }
+
     const u = await user.create({
       name: name,
       email: email,
       password: password,
     });
-    res.status(200).send({ message: "success", status: u });
+
+    res
+      .status(200)
+      .json({ message: `${name} with email ${email} has been registered` });
   } catch (e) {
-    res.send({ message: "failed", status: e });
+    res.status(400).json({ message: e });
   }
 };
 
