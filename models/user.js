@@ -1,5 +1,7 @@
 "use strict";
 const { Model } = require("sequelize");
+const bcrypt = require("bcrypt");
+
 module.exports = (sequelize, DataTypes) => {
   class user extends Model {
     /**
@@ -11,6 +13,7 @@ module.exports = (sequelize, DataTypes) => {
       // define association here
     }
   }
+
   user.init(
     {
       id: {
@@ -36,5 +39,6 @@ module.exports = (sequelize, DataTypes) => {
       underscored: true,
     }
   );
+
   return user;
 };
